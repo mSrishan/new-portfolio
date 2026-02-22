@@ -1,15 +1,99 @@
+'use client';
+
+import Image from 'next/image';
+import ProfilePic from '../../public/profile_pic01.png';
+
 const UserPlaceholder = () => (
-    <svg
-        viewBox="0 0 200 200"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-3/4 h-3/4 opacity-50 dark:opacity-40"
-    >
-        <path
-            fill="#818CF8"
-            d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.3,-46.3C90.8,-33.5,96.8,-18,95.5,-2.9C94.2,12.2,85.6,26.9,76.4,40.5C67.2,54.1,57.4,66.6,44.5,75.4C31.6,84.2,15.8,89.3,0.3,88.8C-15.2,88.3,-30.4,82.2,-43.8,73.4C-57.2,64.6,-68.8,53.1,-76.9,39.6C-85,26.1,-89.6,10.6,-88.3,-4.2C-87,-19,-79.8,-33,-70.6,-44.6C-61.4,-56.2,-50.2,-65.4,-37.6,-73.4C-25,-81.4,-11.1,-88.2,2.4,-92.3C15.9,-96.4,30.6,-83.6,44.7,-76.4Z"
-            transform="translate(100 100) scale(0.9)"
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+        {/* Layered gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-100 via-slate-50 to-cyan-100 dark:from-indigo-950 dark:via-slate-900 dark:to-cyan-950" />
+
+        {/* Mesh grid overlay */}
+        <div
+            className="absolute inset-0 opacity-[0.04] dark:opacity-[0.06]"
+            style={{
+                backgroundImage: `linear-gradient(rgba(99,102,241,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.8) 1px, transparent 1px)`,
+                backgroundSize: '32px 32px',
+            }}
         />
-    </svg>
+
+        {/* Rotating ring */}
+        <div className="absolute inset-0 flex items-center justify-center">
+            <div
+                className="w-[85%] h-[85%] rounded-full border border-indigo-300/30 dark:border-indigo-500/20 animate-spin"
+                style={{ animationDuration: '20s' }}
+            />
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+            <div
+                className="w-[70%] h-[70%] rounded-full border border-dashed border-cyan-300/40 dark:border-cyan-500/20 animate-spin"
+                style={{ animationDuration: '15s', animationDirection: 'reverse' }}
+            />
+        </div>
+
+        {/* Blob glow */}
+        <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-indigo-400/20 dark:bg-indigo-500/15 rounded-full blur-3xl animate-pulse" />
+        <div
+            className="absolute bottom-1/4 right-1/4 w-1/3 h-1/3 bg-cyan-400/20 dark:bg-cyan-500/15 rounded-full blur-2xl animate-pulse"
+            style={{ animationDelay: '1s' }}
+        />
+
+        {/* Profile image */}
+        <div
+            className="relative z-10 w-[72%] h-[72%] overflow-hidden shadow-2xl shadow-indigo-900/20 dark:shadow-indigo-900/40"
+            style={{
+                borderRadius: '60% 40% 55% 45% / 45% 55% 40% 60%',
+                animation: 'blobMorph 8s ease-in-out infinite, floatY 4s ease-in-out infinite',
+            }}
+        >
+            {/* Inner border ring */}
+            <div
+                className="absolute inset-0 z-10 ring-2 ring-indigo-500/20 dark:ring-indigo-400/20"
+                style={{ borderRadius: 'inherit' }}
+            />
+            <Image
+                src={ProfilePic}
+                alt="Srishan Mandawala"
+                fill
+                className="object-cover scale-105"
+                priority
+            />
+        </div>
+
+        {/* Corner dots */}
+        <div className="absolute top-6 right-6 flex gap-1.5">
+            {[0, 1, 2].map((i) => (
+                <div
+                    key={i}
+                    className="w-1.5 h-1.5 rounded-full bg-indigo-400/40 dark:bg-indigo-400/30 animate-pulse"
+                    style={{ animationDelay: `${i * 0.3}s` }}
+                />
+            ))}
+        </div>
+        <div className="absolute bottom-6 left-6 flex gap-1.5">
+            {[0, 1, 2].map((i) => (
+                <div
+                    key={i}
+                    className="w-1.5 h-1.5 rounded-full bg-cyan-400/40 dark:bg-cyan-400/30 animate-pulse"
+                    style={{ animationDelay: `${i * 0.3}s` }}
+                />
+            ))}
+        </div>
+
+        {/* Keyframes */}
+        <style jsx>{`
+            @keyframes blobMorph {
+                0%, 100% { border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%; }
+                25%       { border-radius: 50% 50% 40% 60% / 55% 45% 60% 40%; }
+                50%       { border-radius: 45% 55% 60% 40% / 40% 60% 45% 55%; }
+                75%       { border-radius: 55% 45% 45% 55% / 60% 40% 55% 45%; }
+            }
+            @keyframes floatY {
+                0%, 100% { transform: translateY(0px); }
+                50%       { transform: translateY(-10px); }
+            }
+        `}</style>
+    </div>
 );
 
 export default UserPlaceholder;

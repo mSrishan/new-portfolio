@@ -93,10 +93,10 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                     <p className="text-slate-500 dark:text-slate-500 font-mono text-sm">
                         © {year} Srishan Mandawala. All rights reserved.
                     </p>
-                    <p className="text-slate-500 dark:text-slate-500 font-mono text-sm flex items-center gap-1">
+                    {/* <p className="text-slate-500 dark:text-slate-500 font-mono text-sm flex items-center gap-1">
                         Built with <span className="text-indigo-500">React</span> &amp;{' '}
                         <span className="text-cyan-500">Tailwind</span>
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </footer>

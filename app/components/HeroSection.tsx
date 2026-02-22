@@ -24,7 +24,7 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">
                         Hi, I&apos;m <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-cyan-400">
-                            Srishan.
+                            Srishan Mandawala.
                         </span>
                     </h1>
                 </FadeIn>
