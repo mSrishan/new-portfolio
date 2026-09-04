@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import ProfilePic from '../../public/profile_pic01.png';
+import ProfilePic from '../../public/profile_pic01.jpeg';
 
 const UserPlaceholder = () => (
     <div className="relative w-full h-full flex items-center justify-center overflow-hidden">

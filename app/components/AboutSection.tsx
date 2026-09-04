@@ -65,9 +65,9 @@ const AboutSection = () => {
                     <FadeIn delay={350} direction="right">
                         <div className="grid grid-cols-3 gap-4 pt-2">
                             {[
-                                { value: '6+', label: 'Years exp.' },
-                                { value: '30+', label: 'Projects' },
-                                { value: '4', label: 'Workplaces' },
+                                { value: '1+', label: 'Years exp.' },
+                                { value: '20+', label: 'Projects' },
+                                { value: '1', label: 'Workplace' },
                             ].map((stat) => (
                                 <div
                                     key={stat.label}
