@@ -1,41 +1,51 @@
+'use client';
+
 import FadeIn from './FadeIn';
 import SkillCard from './SkillCard';
-import { Layout, Code2, Database } from 'lucide-react';
+import { skillCategories } from '../data/portfolio';
+import { Layout, Server, Brain, Database, Wrench, Users } from 'lucide-react';
+
+const iconMap: Record<string, React.ReactNode> = {
+  layout: <Layout size={24} />,
+  server: <Server size={24} />,
+  brain: <Brain size={24} />,
+  database: <Database size={24} />,
+  wrench: <Wrench size={24} />,
+  users: <Users size={24} />,
+};
 
 const SkillsSection = () => {
-    return (
-        <section id="skills" className="py-24">
-            <FadeIn>
-                <div className="flex items-center gap-4 mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
-                        Technical Arsenal
-                    </h2>
-                    <div className="h-px bg-slate-200 dark:bg-white/10 flex-grow max-w-xs"></div>
-                </div>
-            </FadeIn>
+  return (
+    <section id="skills" className="py-32">
+      <FadeIn>
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-xs font-semibold tracking-[0.25em] uppercase text-indigo-400">
+            02 — Skills
+          </span>
+        </div>
+        <div className="flex items-end gap-6 mb-16">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none tracking-tight">
+            Technical<br />
+            <span className="gradient-text">Arsenal.</span>
+          </h2>
+          <div className="hidden md:block h-px bg-gradient-to-r from-white/10 to-transparent flex-grow mb-4" />
+        </div>
+      </FadeIn>
 
-            <div className="grid md:grid-cols-3 gap-8">
-                <SkillCard
-                    title="Frontend Development"
-                    icon={<Layout className="text-indigo-500 dark:text-indigo-400" size={24} />}
-                    skills={['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Redux']}
-                    delay={100}
-                />
-                <SkillCard
-                    title="Backend & APIs"
-                    icon={<Code2 className="text-cyan-500 dark:text-cyan-400" size={24} />}
-                    skills={['Node.js', 'Express', 'Python', 'GraphQL', 'REST APIs', 'WebSockets']}
-                    delay={200}
-                />
-                <SkillCard
-                    title="Database & DevOps"
-                    icon={<Database className="text-emerald-500 dark:text-emerald-400" size={24} />}
-                    skills={['PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'AWS', 'CI/CD Pipelines']}
-                    delay={300}
-                />
-            </div>
-        </section>
-    );
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skillCategories.map((category, index) => (
+          <SkillCard
+            key={category.title}
+            title={category.title}
+            icon={iconMap[category.icon]}
+            skills={category.skills}
+            color={category.color}
+            delay={index * 100}
+          />
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default SkillsSection;

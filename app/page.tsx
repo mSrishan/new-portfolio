@@ -9,6 +9,7 @@ import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import ExperienceSection from './components/ExperienceSection';
+import EducationSection from './components/EducationSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import { NAV_LINKS } from './data/portfolio';
@@ -33,20 +34,20 @@ export default function App() {
   };
 
   return (
-    <div className={`${isDarkMode ? 'dark' : ''} selection:bg-indigo-500/30 selection:text-indigo-900 dark:selection:text-white`}>
+    <div className={`${isDarkMode ? 'dark' : ''} selection:bg-indigo-500/30 selection:text-white`}>
       <div className="min-h-screen bg-slate-50 dark:bg-[#030712] text-slate-800 dark:text-slate-300 font-sans overflow-x-hidden transition-colors duration-500">
-        <style>{`html { scroll-behavior: smooth; }`}</style>
 
-        {/* --- Animated Background --- */}
+        {/* Animated Background */}
         <InteractiveBackground isDarkMode={isDarkMode} />
 
-        {/* --- Floating Glow Points --- */}
+        {/* Floating Glow Orbs */}
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/10 dark:bg-indigo-600/20 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-600/10 dark:bg-cyan-600/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-[-15%] left-[-10%] w-[45%] h-[45%] bg-indigo-600/10 dark:bg-indigo-600/15 rounded-full blur-[140px] animate-pulse" />
+          <div className="absolute bottom-[-15%] right-[-10%] w-[45%] h-[45%] bg-cyan-600/10 dark:bg-cyan-600/15 rounded-full blur-[140px] animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-[40%] right-[20%] w-[25%] h-[25%] bg-purple-600/5 dark:bg-purple-600/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '4s' }} />
         </div>
 
-        {/* --- Navigation --- */}
+        {/* Navigation */}
         <Navigation
           isDarkMode={isDarkMode}
           setIsDarkMode={setIsDarkMode}
@@ -58,21 +59,14 @@ export default function App() {
         />
 
         <main className="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
-
           <Chatbot isDarkMode={isDarkMode} />
-
           <HeroSection scrollToSection={scrollToSection} />
-
           <AboutSection />
-
           <SkillsSection />
-
           <ProjectsSection />
-
           <ExperienceSection />
-
+          <EducationSection />
           <ContactSection />
-
         </main>
 
         <Footer scrollToSection={scrollToSection} />
