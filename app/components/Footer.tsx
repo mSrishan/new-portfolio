@@ -27,7 +27,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
             <div className="flex items-center gap-3">
               {[
                 { icon: <Github size={18} />, href: 'https://github.com/mSrishan' },
-                { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/srishan-mandawala' },
+                { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/srishan-mandawala-a09193232/' },
                 { icon: <Mail size={18} />, href: 'mailto:srishanmandawala@gmail.com' },
               ].map((social, i) => (
                 <a
