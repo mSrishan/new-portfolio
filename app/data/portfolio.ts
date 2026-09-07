@@ -68,7 +68,7 @@ export const projects: Project[] = [
     ],
     gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
     duration: "09/2026 \u2013 Present",
-    github: "https://github.com/mSrishan",
+    github: "https://github.com/mSrishan/HealthDoc-AI.git",
   },
   {
     title: "Sri Lankan Legal AI Assistant",
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     ],
     gradient: "from-blue-500 via-cyan-500 to-teal-500",
     duration: "08/2026 \u2013 09/2026",
-    github: "https://github.com/mSrishan",
+    github: "https://github.com/mSrishan/Sri-Lanka-Legal-AI-Assistant.git",
   },
   {
     title: "Cross-Language Ad Matching & Recommendation",
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     ],
     gradient: "from-emerald-500 via-green-500 to-lime-500",
     duration: "08/2025 \u2013 08/2026",
-    github: "https://github.com/mSrishan",
+    github: "https://github.com/mSrishan/ad-matching-web.git",
   },
 ];
 
