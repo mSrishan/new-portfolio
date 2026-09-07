@@ -47,7 +47,7 @@ export const PERSONAL_INFO = {
   phone: "+94 764398193",
   location: "Galle, Sri Lanka",
   bio: "A passionate Software Engineer with hands-on experience in full-stack development and Generative AI. I specialize in building AI-powered applications and intelligent software solutions that push the boundaries of what's possible.",
-  linkedin: "https://www.linkedin.com/in/srishan-mandawala",
+  linkedin: "https://www.linkedin.com/in/srishan-mandawala-a09193232/",
   github: "https://github.com/mSrishan",
   resumeUrl: "#",
 };
