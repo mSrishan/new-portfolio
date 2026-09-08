@@ -64,9 +64,9 @@ const Chatbot = ({ isDarkMode }: ChatbotProps) => {
   return (
     <div className="fixed bottom-6 right-6 z-[100] font-sans">
       {isOpen && (
-        <div className="absolute bottom-20 right-0 w-[350px] md:w-[400px] max-h-[500px] flex flex-col rounded-2xl shadow-2xl glass-strong overflow-hidden">
+        <div className="absolute bottom-20 right-0 w-[calc(100vw-3rem)] sm:w-[350px] md:w-[400px] max-h-[500px] flex flex-col rounded-2xl shadow-2xl glass-strong overflow-hidden">
           {/* Header */}
-          <div className="p-4 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-indigo-600 to-cyan-500">
+          <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between bg-gradient-to-r from-indigo-600 to-cyan-500">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                 <Sparkles size={20} className="text-white" />
@@ -85,7 +85,7 @@ const Chatbot = ({ isDarkMode }: ChatbotProps) => {
           </div>
 
           {/* Messages */}
-          <div ref={scrollRef} className="flex-grow overflow-y-auto p-4 space-y-4 min-h-[300px] bg-[#030712]/90">
+          <div ref={scrollRef} className="flex-grow overflow-y-auto p-4 space-y-4 min-h-[300px] bg-white/95 dark:bg-[#030712]/90">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
@@ -95,7 +95,7 @@ const Chatbot = ({ isDarkMode }: ChatbotProps) => {
                   className={`max-w-[80%] p-3 rounded-2xl text-sm ${
                     msg.role === 'user'
                       ? 'bg-indigo-600 text-white rounded-tr-none'
-                      : 'bg-white/5 text-slate-300 rounded-tl-none border border-white/5'
+                      : 'bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 rounded-tl-none border border-slate-200 dark:border-white/5'
                   }`}
                 >
                   {msg.text}
@@ -104,7 +104,7 @@ const Chatbot = ({ isDarkMode }: ChatbotProps) => {
             ))}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="p-3 rounded-2xl rounded-tl-none bg-white/5 flex gap-1">
+                <div className="p-3 rounded-2xl rounded-tl-none bg-slate-100 dark:bg-white/5 flex gap-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" />
                   <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: '0.2s' }} />
                   <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: '0.4s' }} />
@@ -114,13 +114,13 @@ const Chatbot = ({ isDarkMode }: ChatbotProps) => {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSend} className="p-4 border-t border-white/10 flex gap-2 bg-[#030712]/90">
+          <form onSubmit={handleSend} className="p-4 border-t border-slate-200 dark:border-white/10 flex gap-2 bg-white/95 dark:bg-[#030712]/90">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about skills, projects, experience..."
-              className="flex-grow bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+              className="flex-grow bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-2 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
             />
             <button
               type="submit"
@@ -135,10 +135,10 @@ const Chatbot = ({ isDarkMode }: ChatbotProps) => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-indigo-500/25 transition-all duration-300 hover:scale-110 active:scale-95 ${
-          isOpen ? 'bg-slate-800 rotate-90' : 'bg-gradient-to-r from-indigo-600 to-cyan-600 rotate-0'
-        } text-white`}
+          isOpen ? 'bg-slate-200 dark:bg-slate-800 rotate-90' : 'bg-gradient-to-r from-indigo-600 to-cyan-600 rotate-0'
+        }`}
       >
-        {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
+        {isOpen ? <X size={24} className="text-slate-700 dark:text-white" /> : <MessageSquare size={24} className="text-white" />}
       </button>
     </div>
   );

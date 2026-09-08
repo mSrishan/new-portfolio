@@ -32,41 +32,41 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       <div
         className={`w-full md:w-2/5 flex flex-col ${isEven ? 'md:items-end text-left md:text-right' : 'md:items-start text-left'}`}
       >
-        <p className="text-indigo-400 font-mono text-sm mb-2 tracking-wider uppercase">
+        <p className="text-indigo-600 dark:text-indigo-400 font-mono text-sm mb-2 tracking-wider uppercase">
           Featured Project
         </p>
-        <h3 className="text-2xl font-bold text-white mb-3 hover:text-indigo-400 transition-colors cursor-pointer">
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer">
           {project.title}
         </h3>
 
-        <div className="flex items-center gap-2 text-sm text-slate-400 mb-4 font-mono">
-          <Calendar size={14} className="text-indigo-400" />
+        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-4 font-mono">
+          <Calendar size={14} className="text-indigo-600 dark:text-indigo-400" />
           {project.duration}
         </div>
 
-        <div className="glass-strong p-6 rounded-xl shadow-xl mb-6 text-slate-300 text-sm leading-relaxed">
+        <div className="glass-strong p-6 rounded-xl shadow-xl mb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
           <p>{project.description}</p>
         </div>
 
         <ul
-          className={`flex flex-wrap gap-3 font-mono text-xs text-slate-400 mb-6 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}
+          className={`flex flex-wrap gap-3 font-mono text-xs text-slate-600 dark:text-slate-400 mb-6 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}
         >
           {project.tech.map((tech) => (
-            <li key={tech} className="px-2 py-1 rounded-md bg-white/5 border border-white/5">
+            <li key={tech} className="px-2 py-1 rounded-md bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
               {tech}
             </li>
           ))}
         </ul>
 
         <div
-          className={`flex items-center gap-4 text-slate-300 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}
+          className={`flex items-center gap-4 text-slate-500 dark:text-slate-300 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}
         >
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-white/5"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5"
             >
               <Github size={20} />
             </a>
@@ -76,7 +76,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-white/5"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5"
             >
               <ExternalLink size={20} />
             </a>

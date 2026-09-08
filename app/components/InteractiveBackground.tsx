@@ -18,10 +18,12 @@ const InteractiveBackground = ({ isDarkMode }: InteractiveBackgroundProps) => {
 
         let animationFrameId: number;
         let particles: Particle[] = [];
+        let connectionDistance = 150;
 
         const resize = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            connectionDistance = window.innerWidth < 768 ? 100 : 150;
         };
 
         window.addEventListener('resize', resize);
@@ -58,7 +60,7 @@ const InteractiveBackground = ({ isDarkMode }: InteractiveBackgroundProps) => {
                     const dx = mouseRef.current.x - this.x;
                     const dy = mouseRef.current.y - this.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 150) {
+                    if (distance < connectionDistance) {
                         this.x -= dx * 0.01;
                         this.y -= dy * 0.01;
                     }
@@ -77,7 +79,7 @@ const InteractiveBackground = ({ isDarkMode }: InteractiveBackgroundProps) => {
 
         const init = () => {
             particles = [];
-            const count = Math.min(Math.floor(window.innerWidth / 10), 100);
+            const count = Math.min(Math.floor(window.innerWidth / 15), 60);
             for (let i = 0; i < count; i++) particles.push(new Particle());
         };
 
@@ -90,10 +92,10 @@ const InteractiveBackground = ({ isDarkMode }: InteractiveBackgroundProps) => {
                     const dx = p.x - particles[j].x;
                     const dy = p.y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 150) {
+                    if (distance < connectionDistance) {
                         ctx.strokeStyle = isDarkMode
-                            ? `rgba(129, 140, 248, ${0.1 * (1 - distance / 150)})`
-                            : `rgba(79, 70, 229, ${0.1 * (1 - distance / 150)})`;
+                            ? `rgba(129, 140, 248, ${0.1 * (1 - distance / connectionDistance)})`
+                            : `rgba(79, 70, 229, ${0.1 * (1 - distance / connectionDistance)})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);

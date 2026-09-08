@@ -16,19 +16,19 @@ const iconMap: Record<string, React.ReactNode> = {
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-32">
+    <section id="skills" className="py-20 md:py-32">
       <FadeIn>
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-xs font-semibold tracking-[0.25em] uppercase text-indigo-400">
+          <span className="text-xs font-semibold tracking-[0.25em] uppercase text-indigo-600 dark:text-indigo-400">
             02 — Skills
           </span>
         </div>
         <div className="flex items-end gap-6 mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white leading-none tracking-tight">
             Technical<br />
             <span className="gradient-text">Arsenal.</span>
           </h2>
-          <div className="hidden md:block h-px bg-gradient-to-r from-white/10 to-transparent flex-grow mb-4" />
+          <div className="hidden md:block h-px bg-gradient-to-r from-slate-200 dark:from-white/10 to-transparent flex-grow mb-4" />
         </div>
       </FadeIn>
 

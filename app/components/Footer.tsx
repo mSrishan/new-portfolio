@@ -8,20 +8,20 @@ const Footer = ({ scrollToSection }: FooterProps) => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="pt-20 pb-8 border-t border-white/5 bg-[#030712]/50 relative z-20">
+    <footer className="pt-20 pb-8 border-t border-slate-200 dark:border-white/5 bg-slate-100/80 dark:bg-[#030712]/50 relative z-20">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-2xl font-bold text-white tracking-tighter flex items-center gap-2 mb-4">
+            <div className="text-2xl font-bold text-slate-900 dark:text-white tracking-tighter flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-indigo-500/20">
                 S
               </div>
               <span>
-                Srishan<span className="text-indigo-400">.</span>
+                Srishan<span className="text-indigo-600 dark:text-indigo-400">.</span>
               </span>
             </div>
-            <p className="text-slate-400 mb-6 max-w-sm leading-relaxed">
+            <p className="text-slate-500 dark:text-slate-400 mb-6 max-w-sm leading-relaxed">
               Building AI-powered applications and intelligent digital experiences. Crafting scalable solutions at the intersection of full-stack development and Generative AI.
             </p>
             <div className="flex items-center gap-3">
@@ -35,7 +35,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-indigo-400 transition-all duration-300 border border-white/5 hover:border-white/10"
+                  className="p-3 rounded-xl bg-slate-200/60 dark:bg-white/5 hover:bg-slate-300/60 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 border border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10"
                 >
                   {social.icon}
                 </a>
@@ -45,7 +45,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-wider">
+            <h4 className="text-slate-900 dark:text-white font-bold mb-6 uppercase text-sm tracking-wider">
               Quick Links
             </h4>
             <ul className="space-y-4">
@@ -53,7 +53,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-slate-400 hover:text-indigo-400 transition-colors text-sm"
+                    className="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-sm"
                   >
                     {item}
                   </button>
@@ -64,15 +64,15 @@ const Footer = ({ scrollToSection }: FooterProps) => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-wider">
+            <h4 className="text-slate-900 dark:text-white font-bold mb-6 uppercase text-sm tracking-wider">
               Contact
             </h4>
-            <ul className="space-y-4 text-slate-400 text-sm">
+            <ul className="space-y-4 text-slate-500 dark:text-slate-400 text-sm">
               <li>Galle, Sri Lanka</li>
               <li>
                 <a
                   href="mailto:srishanmandawala@gmail.com"
-                  className="hover:text-indigo-400 transition-colors"
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
                   srishanmandawala@gmail.com
                 </a>
@@ -80,7 +80,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
               <li>
                 <a
                   href="tel:+94764398193"
-                  className="hover:text-indigo-400 transition-colors"
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
                   +94 764398193
                 </a>
@@ -90,14 +90,14 @@ const Footer = ({ scrollToSection }: FooterProps) => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 font-mono text-sm">
+        <div className="pt-8 border-t border-slate-200 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-slate-400 dark:text-slate-500 font-mono text-sm">
             &copy; {year} Srishan Mandawala. All rights reserved.
           </p>
-          <p className="text-slate-500 font-mono text-sm flex items-center gap-1.5">
+          <p className="text-slate-400 dark:text-slate-500 font-mono text-sm flex items-center gap-1.5">
             Built with <Heart size={14} className="text-red-400 fill-red-400" /> using{' '}
-            <span className="text-indigo-400">React</span> &amp;{' '}
-            <span className="text-cyan-400">Next.js</span>
+            <span className="text-indigo-600 dark:text-indigo-400">React</span> &amp;{' '}
+            <span className="text-cyan-600 dark:text-cyan-400">Next.js</span>
           </p>
         </div>
       </div>
